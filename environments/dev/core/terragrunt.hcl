@@ -1,5 +1,5 @@
 locals {
-  mod_name = "${include.parent.locals.env.name}-core"
+  mod_name = "core"
 }
 
 include "parent" {
@@ -11,4 +11,6 @@ terraform {
   source = "${include.parent.locals.module_path}//${local.mod_name}"
 }
 
-inputs = {}
+inputs = {
+  name = include.parent.locals.env.name
+}

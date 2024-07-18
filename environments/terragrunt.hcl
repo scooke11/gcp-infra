@@ -1,5 +1,5 @@
 locals {
-  env_file = read_terragrunt_config("${get_original_terragrunt_dir()}/../env.hcl", {})
+  env_file = read_terragrunt_config("${get_original_terragrunt_dir()}/../env.hcl", {locals = {}})
   env = local.env_file.locals
   module_path = "${get_repo_root()}/modules"
 }
