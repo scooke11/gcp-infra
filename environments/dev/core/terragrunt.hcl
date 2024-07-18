@@ -13,4 +13,5 @@ terraform {
 
 inputs = {
   name = include.parent.locals.env.name
+  project_id = include.parent.locals.project_id
 }
